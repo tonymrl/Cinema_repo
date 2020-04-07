@@ -1,0 +1,136 @@
+
+h1{
+ background-color:  #ffffffbf;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: darkred;
+}
+.form-group{
+  background-color:#0000007a;
+}
+.bg-secondary {
+    background-color: #790000b8 !important;
+}
+
+.submitform {
+  margin: 5px;
+  position: relative;
+  background-color: #1013103d;
+  height: 53%;
+  margin-top: 220px;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+ 
+}
+
+.form-group {
+    margin-bottom: 3rem;
+    padding-left: 13%;
+    text-align:left;
+}
+
+.col-sm {
+}
+.col-sm-10 {
+}
+
+#feedback{
+  color: coral;
+  font-weight: bolder;
+}
+
+#feedbackLog{
+  color:blue;
+  font-weight: bolder;
+}
+
+
+#scrollbar{
+
+  
+
+}
+
+
+#registrati-btn{
+  position: relative;
+  float: right;
+}
+
+.registrazione {
+  margin: 5px;
+  position: relative;
+  background-color: #1013103d;
+  height: 75%;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+}
+
+label{
+  color: azure;
+}
+.col-sm-5{
+  background-color:#00000061;
+  
+}
+
+body{
+	  background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-image: url(/img/cinema2.jpg);
+    background-position-y: center;
+    background-position-x: 44%;
+
+}
+
+#bindex {
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-image: url(/img/cinema.jpg);
+    background-position-y: center;
+    background-position-x: 44%;
+}
+
+
+.justify-content-end {
+  -ms-flex-pack:center!important;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.signEl {
+  color: #007bff!important;
+  font-size: larger;
+  font-style: italic;
+}
+.signEl:hover{
+  font-weight: bolder;
+  color:darkred!important;
+
+}
+img{
+  border-style: double;
+  border-radius: 3px;
+}
+.carousel {
+  position: relative;
+  margin-top: 10%;
+}
+a {
+  color: #ffffff!important;
+  text-decoration: none;
+  background-color: transparent;
+}
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff!important;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
