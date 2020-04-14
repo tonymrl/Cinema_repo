@@ -1,7 +1,6 @@
 package it.fides.cinema.dto;
 
 import java.io.Serializable;
-import java.util.Set;
 
 
 
@@ -14,17 +13,18 @@ public class BigliettoDto implements Serializable{
 	private Long id;
 	private String fila;
 	private Long numero;
-	private Set<ProiezioneDto> proiezioneSet;
-	
+	private ProiezioneDto proiezione;
+	private PersonaDto persona;
 	
 	public BigliettoDto() {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public Long getId() {
 		return id;
 	}
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -34,20 +34,33 @@ public class BigliettoDto implements Serializable{
 	public void setFila(String fila) {
 		this.fila = fila;
 	}
+
 	public Long getNumero() {
 		return numero;
 	}
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
-	public Set<ProiezioneDto> getProiezioneSet() {
-		return proiezioneSet;
+
+	public ProiezioneDto getProiezione() {
+		return proiezione;
 	}
-	public void setProiezioneSet(Set<ProiezioneDto> proiezioneSet) {
-		this.proiezioneSet = proiezioneSet;
+
+	public void setProiezione(ProiezioneDto proiezione) {
+		this.proiezione = proiezione;
 	}
+
+	public PersonaDto getPersona() {
+		return persona;
+	}
+
+	public void setPersona(PersonaDto persona) {
+		this.persona = persona;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
+	
 }

@@ -14,12 +14,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Posto {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "POSTO_SEQ")
-	@SequenceGenerator(name = "POSTO_SEQ",sequenceName = "POSTO_SEQ",allocationSize = 1)
-	@Column(updatable = false, nullable = false)
-	private Long id;
 	
+	@Id
+	@SequenceGenerator(name = "idGenerator", sequenceName = "postoid_gen", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
+	@Column(updatable = false, nullable = false)
+	private Long id;	
+
 	@Column
 	private String fila;
 
@@ -27,7 +28,7 @@ public class Posto {
 	private Long numero;
 	
 	
-	@ManyToOne(targetEntity = Sala.class,cascade = CascadeType.PERSIST)
+	@ManyToOne(targetEntity = Sala.class, cascade = CascadeType.PERSIST)
 	@JoinColumn (name ="ID_SALA", referencedColumnName = "ID")
 	@JsonIgnore
 	private Sala sala;
@@ -71,7 +72,7 @@ public class Posto {
 	public void setSala(Sala sala) {
 		this.sala = sala;
 	}
-	
+
 	
 	
 	

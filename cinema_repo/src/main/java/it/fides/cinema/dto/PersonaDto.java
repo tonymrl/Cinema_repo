@@ -2,6 +2,7 @@ package it.fides.cinema.dto;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
 
 
 
@@ -12,19 +13,28 @@ public class PersonaDto implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
+	private Date dataNascita;
 	private String username;
 	private String password;
 	private String nome;
 	private String cognome;
-	private Date data_nascita;
 	private String email;
 	private String ruolo;
+	private Set<BigliettoDto> setBiglietti;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public Date getDataNascita() {
+		return dataNascita;
+	}
+	public void setDataNascita(Date dataNascita) {
+		this.dataNascita = dataNascita;
 	}
 	public String getUsername() {
 		return username;
@@ -50,7 +60,6 @@ public class PersonaDto implements Serializable {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -63,16 +72,15 @@ public class PersonaDto implements Serializable {
 	public void setRuolo(String ruolo) {
 		this.ruolo = ruolo;
 	}
+	public Set<BigliettoDto> getSetBiglietti() {
+		return setBiglietti;
+	}
+	public void setSetBiglietti(Set<BigliettoDto> setBiglietti) {
+		this.setBiglietti = setBiglietti;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public Date getData_nascita() {
-		return data_nascita;
-	}
-	public void setData_nascita(Date data_nascita) {
-		this.data_nascita = data_nascita;
-	}
-	
 	
 	
 }

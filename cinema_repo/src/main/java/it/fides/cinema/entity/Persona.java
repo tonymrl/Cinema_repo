@@ -1,16 +1,26 @@
 package it.fides.cinema.entity;
 
-
-
 import java.sql.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.SequenceGenerator;
+
 @Entity
 public class Persona {
+	
 	@Id
-	@Column(name = "id")
+	@SequenceGenerator(name = "userGen", sequenceName = "userid_gen", allocationSize = 1)
+	@GeneratedValue(generator = "userGen", strategy = GenerationType.SEQUENCE)
+	@OrderBy("id asc")
 	private Long id;
 	
 	@Column
@@ -26,7 +36,7 @@ public class Persona {
 	private String cognome;
 	
 	@Column(name = "DATA_NASCITA")
-	private Date data_nascita;
+	private Date dataNascita;
 	
 	@Column
 	private String email;
@@ -34,16 +44,15 @@ public class Persona {
 	@Column
 	private String ruolo;
 
-	public Date getData_nascita() {
-		return data_nascita;
-	}
-
-	public void setData_nascita(Date data_nascita) {
-		this.data_nascita = data_nascita;
-	}
+	@OneToMany(targetEntity = Biglietto.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "idPersona")
+	private Set<Biglietto> bigliettiSet;
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -78,6 +87,13 @@ public class Persona {
 		this.cognome = cognome;
 	}
 
+	public Date getDataNascita() {
+		return dataNascita;
+	}
+
+	public void setDataNascita(Date dataNascita) {
+		this.dataNascita = dataNascita;
+	}
 
 	public String getEmail() {
 		return email;
@@ -95,12 +111,15 @@ public class Persona {
 		this.ruolo = ruolo;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Set<Biglietto> getBigliettiSet() {
+		return bigliettiSet;
 	}
 
+	public void setBigliettiSet(Set<Biglietto> bigliettiSet) {
+		this.bigliettiSet = bigliettiSet;
+	}
 
-
+	
 	
 	
 	

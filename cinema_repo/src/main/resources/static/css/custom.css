@@ -2,7 +2,7 @@
 h1{
  background-color:  #ffffffbf;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Gotu', sans-serif;
   color: darkred;
 }
 .form-group{
@@ -46,13 +46,6 @@ h1{
 }
 
 
-#scrollbar{
-
-  
-
-}
-
-
 #registrati-btn{
   position: relative;
   float: right;
@@ -69,21 +62,37 @@ h1{
   width: 100%;
 }
 
-label{
-  color: azure;
-}
 .col-sm-5{
   background-color:#00000061;
-  
 }
 
 body{
-	  background-attachment: fixed;
-    background-repeat: repeat-x;
-    background-image: url(/img/cinema2.jpg);
-    background-position-y: center;
-    background-position-x: 44%;
+	background-color: #F4EBEB;	
+}
 
+table thead, tfoot{
+	font-family: 'Comfortaa', cursive;
+}
+
+.dataTables_wrapper label {
+    color: black;
+    font-family: 'Gotu', sans-serif;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: none !important;
+    text-align: center !important;
+}
+.dataTables_wrapper .dataTables_length {
+    display: none;
+}
+
+.dataTables_info{
+	 display: none;
+}
+.dataTables_paginate{
+	float: none !important;
+	text-align: center !important;
 }
 
 #bindex {

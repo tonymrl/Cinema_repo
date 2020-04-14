@@ -37,7 +37,7 @@ public class GestioneSalaController {
 	}
 	
 	@GetMapping(value = "/findByIdSala/{id}")
-	public SalaDto idSala(@PathVariable("id") Long idSala) {
+	public SalaDto idSala(@PathVariable(value = "id") Long idSala) {
 	return gestioneSala.findById(idSala);
 	}
 	
@@ -45,7 +45,7 @@ public class GestioneSalaController {
 	
 	@PostMapping(value = "/insertSala")
 	public void insertSala(@RequestBody SalaDto salaDto) {
-		gestioneSala.inserSala(salaDto);
+		gestioneSala.insertSala(salaDto);
 	}
 	
 	@PostMapping(value = "searchSala")

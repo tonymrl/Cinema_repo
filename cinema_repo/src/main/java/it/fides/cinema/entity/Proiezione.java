@@ -7,36 +7,41 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Proiezione {
+	
 	@Id
-	@Column(name = "id")
-	private Long id;	
+	@SequenceGenerator(name = "idGeneratorProiezione", sequenceName = "proiezioneid_gen", schema = "\"dario\"", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGeneratorProiezione")
+	private Long id;
 
 	@Column(name = "DATA_PROIEZIONE")
-	Date data_proiezione;
+	private Date dataProiezione;
 
 	@Column(name = "POSTI_DISPONIBILI")
-	Long postiDisponibili;
+	private Long postiDisponibili;
 
 	/////////
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "ID_SALA", referencedColumnName = "ID")
-	private Sala sala;
+	private Sala idSala;
 	/////
 
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "ID_FILM", referencedColumnName = "ID")
-	private Film film;
+	private Film idFilm;
 
 
 	@OneToMany(targetEntity = Biglietto.class , fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "idProiezione")
-	private Set<Biglietto> BigliettiSet;
+	private Set<Biglietto> setBiglietti;
 
 
 	public Long getId() {
@@ -49,13 +54,13 @@ public class Proiezione {
 	}
 
 
-	public Date getData_proiezione() {
-		return data_proiezione;
+	public Date getDataProiezione() {
+		return dataProiezione;
 	}
 
 
-	public void setData_proiezione(Date data_proiezione) {
-		this.data_proiezione = data_proiezione;
+	public void setDataProiezione(Date dataProiezione) {
+		this.dataProiezione = dataProiezione;
 	}
 
 
@@ -69,42 +74,36 @@ public class Proiezione {
 	}
 
 
-	public Sala getSala() {
-		return sala;
+	public Sala getIdSala() {
+		return idSala;
 	}
 
 
-	public void setSala(Sala sala) {
-		this.sala = sala;
+	public void setIdSala(Sala idSala) {
+		this.idSala = idSala;
 	}
 
 
-	public Film getFilm() {
-		return film;
+	public Film getIdFilm() {
+		return idFilm;
 	}
 
 
-	public void setFilm(Film film) {
-		this.film = film;
+	public void setIdFilm(Film idFilm) {
+		this.idFilm = idFilm;
 	}
 
 
-	public Set<Biglietto> getBigliettiSet() {
-		return BigliettiSet;
+	public Set<Biglietto> getSetBiglietti() {
+		return setBiglietti;
 	}
 
 
-	public void setBigliettiSet(Set<Biglietto> bigliettiSet) {
-		BigliettiSet = bigliettiSet;
+	public void setSetBiglietti(Set<Biglietto> setBiglietti) {
+		this.setBiglietti = setBiglietti;
 	}
 
 
-
-
-
-
-
-
-
+	
 
 }

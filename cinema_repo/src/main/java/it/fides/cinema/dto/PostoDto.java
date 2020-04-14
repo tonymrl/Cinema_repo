@@ -2,8 +2,6 @@ package it.fides.cinema.dto;
 
 import java.io.Serializable;
 
-import org.dozer.Mapping;
-
 public class PostoDto implements Serializable{
 	
 	/**
@@ -13,7 +11,6 @@ public class PostoDto implements Serializable{
 	private Long id;
 	private String fila;
 	private Long numero;
-	@Mapping("sala")
 	private SalaDto sala;
 	
 	

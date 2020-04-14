@@ -11,7 +11,7 @@ public interface GestioneSala {
 
 	public SalaDto findById(Long idSala);
 	
-	public void inserSala(SalaDto salaDto);
+	public void insertSala(SalaDto salaDto);
 
 	public List<SalaDto> findByNomeSala(SearchSalaDto searchSalaDto);
 

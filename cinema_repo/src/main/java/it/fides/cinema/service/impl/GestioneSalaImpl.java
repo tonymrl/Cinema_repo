@@ -11,13 +11,13 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.fides.cinema.service.GestioneSala;
 import it.fides.cinema.dto.PostoDto;
 import it.fides.cinema.dto.SalaDto;
 import it.fides.cinema.dto.SearchSalaDto;
 import it.fides.cinema.entity.Posto;
 import it.fides.cinema.entity.Sala;
 import it.fides.cinema.repository.SalaRepository;
-import it.fides.cinema.service.GestioneSala;
 
 
 @Service
@@ -33,24 +33,25 @@ public class GestioneSalaImpl implements GestioneSala {
 	public List<SalaDto> getAllSala() {
 		List<SalaDto> listaSaleDto = new ArrayList<>();
 		for (Sala sala : salaRepository.findAll()) {
-			SalaDto salaDto=new SalaDto();
+			SalaDto salaDto = new SalaDto();
 			salaDto.setNomeSala(sala.getNomeSala());
+			salaDto.setId(sala.getId());
+			salaDto.setNumeroPosti(sala.getNumeroPosti());
 			listaSaleDto.add(salaDto);
 		}
 		return listaSaleDto;
 	}
 
-
 	@Override
-	public void inserSala(SalaDto salaDto) {
+	public void insertSala(SalaDto salaDto) {
 
-		mapper=new DozerBeanMapper();
+		mapper = new DozerBeanMapper();
 
 		Sala sala=mapper.map(salaDto, Sala.class);
 
-		Set<Posto> listaPosti=new HashSet<>();
+		Set<Posto> listaPosti = new HashSet<>();
 
-		for (PostoDto postoDto  : salaDto.getPostoSet()) {
+		for (PostoDto postoDto  : salaDto.getSetPosti()) {
 
 			Posto posto=mapper.map(postoDto, Posto.class);
 
@@ -58,21 +59,19 @@ public class GestioneSalaImpl implements GestioneSala {
 			listaPosti.add(posto);
 		}
 
-		sala.setPostoSet(listaPosti);
+		sala.setSetPosti(listaPosti);
 		salaRepository.save(sala);
-
 	}
-
-
 
 	@Override
 	public SalaDto findById(Long idSala) {
 		Sala sala = salaRepository.findById(idSala).get();
-		SalaDto salaDto=new SalaDto();
+		SalaDto salaDto = new SalaDto();
 		salaDto.setNomeSala(sala.getNomeSala());
-		Set<PostoDto> postoSet= new HashSet<>();
+		salaDto.setNumeroPosti(sala.getNumeroPosti());
 		
-		for (Posto posto : sala.getPostoSet()) {
+		Set<PostoDto> postoSet= new HashSet<>();
+		for (Posto posto : sala.getSetPosti()) {
 			PostoDto postoDto= new PostoDto();
 			postoDto.setId(posto.getId());
 			postoDto.setFila(posto.getFila());
@@ -80,10 +79,7 @@ public class GestioneSalaImpl implements GestioneSala {
 			
 			postoSet.add(postoDto);		
 		}
-		salaDto.setPostoSet(postoSet);
-		
-		
-		
+		salaDto.setSetPosti(postoSet);
 		return salaDto;
 	}
 
@@ -95,7 +91,6 @@ public class GestioneSalaImpl implements GestioneSala {
 		List<SalaDto> listaSalaDto=new ArrayList<>();
 		Set<PostoDto> postoSet= new HashSet<>();
 		SalaDto salaDto=new SalaDto();
-		int countPosto;
 		if (listaSala != null && !listaSala.isEmpty()) {
 
 			for (Sala sala : listaSala) {
@@ -103,8 +98,8 @@ public class GestioneSalaImpl implements GestioneSala {
 				salaDto.setNomeSala(sala.getNomeSala());
 				salaDto.setNumeroPosti(sala.getNumeroPosti());
 				
-				for (Posto posto  : sala.getPostoSet()) {
-					PostoDto postoDto=new PostoDto();
+				for (Posto posto  : sala.getSetPosti()) {
+					PostoDto postoDto = new PostoDto();
 					postoDto.setId(posto.getId());
 					postoDto.setFila(posto.getFila());
 					postoDto.setNumero(posto.getNumero());
@@ -114,16 +109,13 @@ public class GestioneSalaImpl implements GestioneSala {
 				}
 				listaSalaDto.add(salaDto);
 			}
-			salaDto.setPostoSet(postoSet);
-			
-			countPosto=postoSet.size();
-			System.out.println("posti disponibili in sala: "+countPosto);
+			salaDto.setSetPosti(postoSet);
+
 
 		}
 
 		return listaSalaDto;
 	}
-
 	@Override
 	public List<SalaDto> findByNomeSalaLike(SearchSalaDto searchSalaDto) {
 
@@ -139,12 +131,8 @@ public class GestioneSalaImpl implements GestioneSala {
 				salaDto.setNumeroPosti(sala.getNumeroPosti());
 			
 				listaSalaDto.add(salaDto);
-			}
-			
-			
+			}	
 		}
-
-
 		return listaSalaDto;
 	}
 
