@@ -13,7 +13,7 @@ public class BigliettoDto implements Serializable{
 	private static final long serialVersionUID = -139883742683902897L;
 	private Long id;
 	private String fila;
-	private Long NUMERO;
+	private Long numero;
 	private Set<ProiezioneDto> proiezioneSet;
 	
 	
@@ -25,43 +25,29 @@ public class BigliettoDto implements Serializable{
 	public Long getId() {
 		return id;
 	}
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
 	public String getFila() {
 		return fila;
 	}
-
-
 	public void setFila(String fila) {
 		this.fila = fila;
 	}
-
-
-	public Long getNUMERO() {
-		return NUMERO;
+	public Long getNumero() {
+		return numero;
 	}
-
-
-	public void setNUMERO(Long nUMERO) {
-		NUMERO = nUMERO;
+	public void setNumero(Long numero) {
+		this.numero = numero;
 	}
-
-
 	public Set<ProiezioneDto> getProiezioneSet() {
 		return proiezioneSet;
 	}
-
-
 	public void setProiezioneSet(Set<ProiezioneDto> proiezioneSet) {
 		this.proiezioneSet = proiezioneSet;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
-	
-	
-	
 }

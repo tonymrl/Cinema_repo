@@ -12,7 +12,7 @@ import it.fides.cinema.dto.ProiezioneDto;
 import it.fides.cinema.service.GestioneProiezione;
 
 @RestController
-public class ProiezioneController {
+public class GestioneProiezioneController {
 	
 	@Autowired
 	GestioneProiezione gestioneProiezione;
@@ -29,8 +29,8 @@ public class ProiezioneController {
 	}
 	
 	
-	@GetMapping("allProiezione")
-		public List<ProiezioneDto> allProiezione(){
+	@GetMapping(value = "/allProiezione")
+	public List<ProiezioneDto> allProiezione(){
 		return gestioneProiezione.getAllProiezione();
 	}
 

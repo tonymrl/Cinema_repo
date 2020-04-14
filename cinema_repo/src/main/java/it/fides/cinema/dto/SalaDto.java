@@ -3,10 +3,6 @@ package it.fides.cinema.dto;
 import java.io.Serializable;
 import java.util.Set;
 
-import org.dozer.Mapping;
-
-import it.fides.cinema.entity.Proiezione;
-
 
 
 public class SalaDto implements Serializable {

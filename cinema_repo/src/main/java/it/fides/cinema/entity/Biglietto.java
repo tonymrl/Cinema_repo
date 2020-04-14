@@ -14,10 +14,10 @@ public class Biglietto {
 	private Long id;
 	
 	@Column
-	private String FILA;
+	private String fila;
 	
 	@Column 
-	private Long NUMERO;
+	private Long numero;
 	
 	@ManyToOne
 	@JoinColumn (name ="id_proiezione", referencedColumnName = "id") //id proiezione è il nome della foreign key nel db e si riferisce ad una colonna id di proiezione
@@ -29,11 +29,6 @@ public class Biglietto {
 
 	
 	
-	
-	
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -42,28 +37,28 @@ public class Biglietto {
 		this.id = id;
 	}
 
-	public String getFILA() {
-		return FILA;
+	public String getFila() {
+		return fila;
 	}
 
-	public void setFILA(String fILA) {
-		FILA = fILA;
+	public void setFila(String fila) {
+		this.fila = fila;
 	}
 
-	public Long getNUMERO() {
-		return NUMERO;
+	public Long getNumero() {
+		return numero;
 	}
 
-	public void setNUMERO(Long nUMERO) {
-		NUMERO = nUMERO;
+	public void setNumero(Long numero) {
+		this.numero = numero;
 	}
 
-	public Proiezione getProiezione() {
+	public Proiezione getIdProiezione() {
 		return idProiezione;
 	}
 
-	public void setProiezione(Proiezione proiezione) {
-		this.idProiezione = proiezione;
+	public void setIdProiezione(Proiezione idProiezione) {
+		this.idProiezione = idProiezione;
 	}
 
 	public Persona getPersona() {
@@ -73,7 +68,9 @@ public class Biglietto {
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
+
 	
+
 	
 	
 }

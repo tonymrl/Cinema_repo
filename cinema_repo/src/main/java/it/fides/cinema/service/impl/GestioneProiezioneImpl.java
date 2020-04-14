@@ -41,20 +41,16 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 		
 		for ( Proiezione proiezione : proiezioneRepository.findAll()) {
 			
-			ProiezioneDto proiezioneDto=new ProiezioneDto();
+			ProiezioneDto proiezioneDto = new ProiezioneDto();
 			proiezioneDto.setId(proiezione.getId());
-			proiezioneDto.setData_proiezione(proiezione.getData_proiezione());
-			
-			int countPosto=gestioneSalaImpl.getCountPosto(proiezione.getSala().getNomeSala());  //restituisce tutti i posti della sala a cui è associata la proiezione
-			proiezioneDto.setPostiDisponibili((long) countPosto);
-			
+			proiezioneDto.setData_proiezione(proiezione.getData_proiezione());	
 			proiezioneDto.setSala(proiezione.getSala());
 			proiezioneDto.setFilm(proiezione.getFilm());
 			listaProiezioniDto.add(proiezioneDto);
 		
 			
 			
-			System.out.println("countPostoProiezione: "+countPosto + " di: "+proiezione.getSala().getNomeSala());
+			System.out.println("countPostoProiezione: "+ " di: "+proiezione.getSala().getNomeSala());
 			
 			
 		}
