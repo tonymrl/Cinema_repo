@@ -33,13 +33,16 @@ public class GestioneSalaImpl implements GestioneSala {
 	public List<SalaDto> getAllSala() {
 		List<SalaDto> listaSaleDto = new ArrayList<>();
 		for (Sala sala : salaRepository.findAll()) {
-			SalaDto salaDto=new SalaDto();
+			SalaDto salaDto = new SalaDto();
 			salaDto.setNomeSala(sala.getNomeSala());
+			salaDto.setId(sala.getId());
+			salaDto.setNumeroPosti(sala.getNumeroPosti());
 			listaSaleDto.add(salaDto);
 		}
 		return listaSaleDto;
 	}
 
+<<<<<<< Updated upstream
 
 
 
@@ -76,16 +79,18 @@ public class GestioneSalaImpl implements GestioneSala {
 
 
 
+=======
+>>>>>>> Stashed changes
 	@Override
-	public void inserSala(SalaDto salaDto) {
+	public void insertSala(SalaDto salaDto) {
 
-		mapper=new DozerBeanMapper();
+		mapper = new DozerBeanMapper();
 
 		Sala sala=mapper.map(salaDto, Sala.class);
 
-		Set<Posto> listaPosti=new HashSet<>();
+		Set<Posto> listaPosti = new HashSet<>();
 
-		for (PostoDto postoDto  : salaDto.getPostoSet()) {
+		for (PostoDto postoDto  : salaDto.getSetPosti()) {
 
 			Posto posto=mapper.map(postoDto, Posto.class);
 
@@ -93,21 +98,19 @@ public class GestioneSalaImpl implements GestioneSala {
 			listaPosti.add(posto);
 		}
 
-		sala.setPostoSet(listaPosti);
+		sala.setSetPosti(listaPosti);
 		salaRepository.save(sala);
-
 	}
-
-
 
 	@Override
 	public SalaDto findById(Long idSala) {
 		Sala sala = salaRepository.findById(idSala).get();
-		SalaDto salaDto=new SalaDto();
+		SalaDto salaDto = new SalaDto();
 		salaDto.setNomeSala(sala.getNomeSala());
-		Set<PostoDto> postoSet= new HashSet<>();
+		salaDto.setNumeroPosti(sala.getNumeroPosti());
 		
-		for (Posto posto : sala.getPostoSet()) {
+		Set<PostoDto> postoSet= new HashSet<>();
+		for (Posto posto : sala.getSetPosti()) {
 			PostoDto postoDto= new PostoDto();
 			postoDto.setId(posto.getId());
 			postoDto.setFila(posto.getFila());
@@ -115,10 +118,7 @@ public class GestioneSalaImpl implements GestioneSala {
 			
 			postoSet.add(postoDto);		
 		}
-		salaDto.setPostoSet(postoSet);
-		
-		
-		
+		salaDto.setSetPosti(postoSet);
 		return salaDto;
 	}
 
@@ -138,8 +138,8 @@ public class GestioneSalaImpl implements GestioneSala {
 				salaDto.setNomeSala(sala.getNomeSala());
 				salaDto.setNumeroPosti(sala.getNumeroPosti());
 				
-				for (Posto posto  : sala.getPostoSet()) {
-					PostoDto postoDto=new PostoDto();
+				for (Posto posto  : sala.getSetPosti()) {
+					PostoDto postoDto = new PostoDto();
 					postoDto.setId(posto.getId());
 					postoDto.setFila(posto.getFila());
 					postoDto.setNumero(posto.getNumero());
@@ -149,7 +149,7 @@ public class GestioneSalaImpl implements GestioneSala {
 				}
 				listaSalaDto.add(salaDto);
 			}
-			salaDto.setPostoSet(postoSet);
+			salaDto.setSetPosti(postoSet);
 			
 			countPosto=postoSet.size();
 			System.out.println("posti disponibili in sala: "+countPosto);

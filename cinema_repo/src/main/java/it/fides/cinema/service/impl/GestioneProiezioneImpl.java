@@ -3,22 +3,19 @@ package it.fides.cinema.service.impl;
 
 
 import java.util.ArrayList;
-
-
-
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.fides.cinema.dto.FilmDto;
 import it.fides.cinema.dto.PostoDto;
 import it.fides.cinema.dto.ProiezioneDto;
+import it.fides.cinema.dto.SalaDto;
 //import it.fides.cinema.dto.SearchSalaDto;
 import it.fides.cinema.entity.Proiezione;
-
 import it.fides.cinema.repository.ProiezioneRepository;
 import it.fides.cinema.repository.ProiezioneRepository.OnlyPosto;
 import it.fides.cinema.service.GestioneProiezione;
@@ -43,6 +40,7 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 			
 			ProiezioneDto proiezioneDto=new ProiezioneDto();
 			proiezioneDto.setId(proiezione.getId());
+<<<<<<< Updated upstream
 			proiezioneDto.setData_proiezione(proiezione.getData_proiezione());
 			
 			int countPosto=gestioneSalaImpl.getCountPosto(proiezione.getSala().getNomeSala());  //restituisce tutti i posti della sala a cui è associata la proiezione
@@ -55,15 +53,25 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 			
 			
 			System.out.println("countPostoProiezione: "+countPosto + " di: "+proiezione.getSala().getNomeSala());
+=======
+			proiezioneDto.setDataProiezione(proiezione.getDataProiezione());
+			proiezioneDto.setPostiDisponibili(proiezioneRepository.contaPostiLiberi(proiezione.getId()));
 			
+			SalaDto salaDto = new SalaDto();
+			salaDto.setNomeSala(proiezione.getIdSala().getNomeSala());
+			proiezioneDto.setSala(salaDto);
+>>>>>>> Stashed changes
 			
+			FilmDto filmDto = new FilmDto();
+			filmDto.setTitolo(proiezione.getIdFilm().getTitolo());
+			proiezioneDto.setFilm(filmDto);
+			
+			listaProiezioniDto.add(proiezioneDto);			
 		}
 		
 		return listaProiezioniDto;
 		
 	}
-	
-	
 	
 	@Override
 	public List<PostoDto> mostraPostiDisponibili(Long idProiezione) {

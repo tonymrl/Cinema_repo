@@ -3,14 +3,19 @@ package it.fides.cinema.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Biglietto {
+	
 	@Id
-	@Column(name = "id")
+	@SequenceGenerator(name = "idGeneratorBiglietto", sequenceName = "bigliettoid_gen", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGeneratorBiglietto")
 	private Long id;
 	
 	@Column
@@ -25,15 +30,18 @@ public class Biglietto {
 	
 	@ManyToOne
 	@JoinColumn (name ="id_persona", referencedColumnName = "id")
-	private Persona persona;
+	private Persona idPersona;
 
 	
+<<<<<<< Updated upstream
 	
 	
 	
 	
 	
 	
+=======
+>>>>>>> Stashed changes
 	public Long getId() {
 		return id;
 	}
@@ -66,14 +74,17 @@ public class Biglietto {
 		this.idProiezione = proiezione;
 	}
 
-	public Persona getPersona() {
-		return persona;
+	public Persona getIdPersona() {
+		return idPersona;
 	}
 
-	public void setPersona(Persona persona) {
-		this.persona = persona;
+	public void setIdPersona(Persona idPersona) {
+		this.idPersona = idPersona;
 	}
+<<<<<<< Updated upstream
 	
 	
 	
+=======
+>>>>>>> Stashed changes
 }

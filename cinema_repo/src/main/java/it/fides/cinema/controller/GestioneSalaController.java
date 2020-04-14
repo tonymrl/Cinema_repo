@@ -36,8 +36,13 @@ public class GestioneSalaController {
 		return gestioneSala.getAllSala();
 	}
 	
+<<<<<<< Updated upstream
 	@GetMapping(value = "/findByIdSala")
 	public SalaDto idSala(@RequestParam Long idSala) {
+=======
+	@GetMapping(value = "/findByIdSala/{id}")
+	public SalaDto idSala(@PathVariable(value = "id") Long idSala) {
+>>>>>>> Stashed changes
 	return gestioneSala.findById(idSala);
 	}
 	
@@ -45,7 +50,7 @@ public class GestioneSalaController {
 	
 	@PostMapping(value = "/insertSala")
 	public void insertSala(@RequestBody SalaDto salaDto) {
-		gestioneSala.inserSala(salaDto);
+		gestioneSala.insertSala(salaDto);
 	}
 	
 	@PostMapping(value = "searchSala")
