@@ -40,27 +40,12 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 			
 			ProiezioneDto proiezioneDto=new ProiezioneDto();
 			proiezioneDto.setId(proiezione.getId());
-<<<<<<< Updated upstream
-			proiezioneDto.setData_proiezione(proiezione.getData_proiezione());
-			
-			int countPosto=gestioneSalaImpl.getCountPosto(proiezione.getSala().getNomeSala());  //restituisce tutti i posti della sala a cui è associata la proiezione
-			proiezioneDto.setPostiDisponibili((long) countPosto);
-			
-			proiezioneDto.setSala(proiezione.getSala());
-			proiezioneDto.setFilm(proiezione.getFilm());
-			listaProiezioniDto.add(proiezioneDto);
-		
-			
-			
-			System.out.println("countPostoProiezione: "+countPosto + " di: "+proiezione.getSala().getNomeSala());
-=======
 			proiezioneDto.setDataProiezione(proiezione.getDataProiezione());
 			proiezioneDto.setPostiDisponibili(proiezioneRepository.contaPostiLiberi(proiezione.getId()));
 			
 			SalaDto salaDto = new SalaDto();
 			salaDto.setNomeSala(proiezione.getIdSala().getNomeSala());
-			proiezioneDto.setSala(salaDto);
->>>>>>> Stashed changes
+			proiezioneDto.setSala(salaDto);			
 			
 			FilmDto filmDto = new FilmDto();
 			filmDto.setTitolo(proiezione.getIdFilm().getTitolo());

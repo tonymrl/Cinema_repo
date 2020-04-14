@@ -32,16 +32,6 @@ public class Biglietto {
 	@JoinColumn (name ="id_persona", referencedColumnName = "id")
 	private Persona idPersona;
 
-	
-<<<<<<< Updated upstream
-	
-	
-	
-	
-	
-	
-=======
->>>>>>> Stashed changes
 	public Long getId() {
 		return id;
 	}
@@ -81,10 +71,5 @@ public class Biglietto {
 	public void setIdPersona(Persona idPersona) {
 		this.idPersona = idPersona;
 	}
-<<<<<<< Updated upstream
-	
-	
-	
-=======
->>>>>>> Stashed changes
+
 }
