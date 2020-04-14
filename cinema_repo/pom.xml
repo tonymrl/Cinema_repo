@@ -71,30 +71,11 @@
 			</exclusions>
 		</dependency>
 
-<<<<<<< Updated upstream
-
-		<!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc8 -->
-		<dependency>
-			<groupId>com.oracle.ojdbc</groupId>
-			<artifactId>ojdbc8</artifactId>
-		
-		</dependency>
-
-=======
->>>>>>> Stashed changes
 	</dependencies>
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-<<<<<<< Updated upstream
-				
-=======
-		
->>>>>>> Stashed changes
-			</plugin>
+			
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
