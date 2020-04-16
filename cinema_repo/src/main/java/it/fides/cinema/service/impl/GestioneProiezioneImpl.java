@@ -14,7 +14,6 @@ import it.fides.cinema.dto.FilmDto;
 import it.fides.cinema.dto.PostoDto;
 import it.fides.cinema.dto.ProiezioneDto;
 import it.fides.cinema.dto.SalaDto;
-//import it.fides.cinema.dto.SearchSalaDto;
 import it.fides.cinema.entity.Proiezione;
 import it.fides.cinema.repository.ProiezioneRepository;
 import it.fides.cinema.repository.ProiezioneRepository.OnlyPosto;
@@ -57,9 +56,7 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 		return listaProiezioniDto;
 		
 	}
-	
-	//sono bello
-	
+
 	@Override
 	public List<PostoDto> mostraPostiDisponibili(Long idProiezione) {
 		
