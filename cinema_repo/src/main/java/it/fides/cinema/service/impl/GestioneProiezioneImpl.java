@@ -58,7 +58,7 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 		
 	}
 	
-	//sono bello
+	//Il mondo é malato
 	
 	@Override
 	public List<PostoDto> mostraPostiDisponibili(Long idProiezione) {
