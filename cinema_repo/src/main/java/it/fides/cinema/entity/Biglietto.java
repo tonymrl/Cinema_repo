@@ -1,6 +1,8 @@
 package it.fides.cinema.entity;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +13,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Biglietto {
+public class Biglietto implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7149995270935608254L;
+
 	@Id
 	@SequenceGenerator(name = "idGeneratorBiglietto", sequenceName = "bigliettoid_gen", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGeneratorBiglietto")

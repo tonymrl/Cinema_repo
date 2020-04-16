@@ -1,5 +1,6 @@
 package it.fides.cinema.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
@@ -16,8 +17,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Proiezione {
+public class Proiezione implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1955159881619946867L;
+
 	@Id
 	@SequenceGenerator(name = "idGeneratorProiezione", sequenceName = "proiezioneid_gen", schema = "\"dario\"", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGeneratorProiezione")

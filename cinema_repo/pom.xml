@@ -32,6 +32,11 @@
         <version>5.5.1</version>
     </dependency>
     
+    <dependency>
+	    <groupId>org.modelmapper</groupId>
+	    <artifactId>modelmapper</artifactId>
+	    <version>2.3.5</version>
+	</dependency>
     
     <dependency>
         <groupId>org.modelmapper</groupId>
@@ -98,11 +103,11 @@
 
 	<build>
 		<plugins>
-			<plugin>
+		<!-- 	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-			</plugin>
+		<version>2.22.2</version>
+			</plugin> -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

@@ -17,6 +17,7 @@ public class ProiezioneDto implements Serializable {
 	private SalaDto sala;
 	private FilmDto film;
 	private Set<BigliettoDto> setBiglietti;
+	
 	public Long getId() {
 		return id;
 	}

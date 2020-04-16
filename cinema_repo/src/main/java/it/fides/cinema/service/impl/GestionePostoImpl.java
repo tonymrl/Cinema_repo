@@ -18,7 +18,7 @@ import it.fides.cinema.service.GestionePosto;
 @Service
 @Transactional
 public class GestionePostoImpl implements GestionePosto {
-
+		
 	@Autowired
 	private PostoRepository postoRepository;
 	
@@ -35,6 +35,16 @@ public class GestionePostoImpl implements GestionePosto {
 				setPosti.add(postoDto);
 		}
 		
+//		try {
+//			for (Posto posto : postoRepository.findAll()) {
+//				PostoDto postoDto = new PostoDto();
+//				postoDto = mapper.map(posto, PostoDto.class);
+//				if(posto.getSala().getNomeSala().equalsIgnoreCase(nomeSala))
+//					setPosti.add(postoDto);
+//			}
+//		}catch(NullPointerException e) {
+//			e.printStackTrace();
+//		}
 		return setPosti;
 	}
 	

@@ -1,5 +1,7 @@
 package it.fides.cinema.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +15,13 @@ import javax.persistence.SequenceGenerator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Posto {
+public class Posto implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8221989045209529873L;
+
 	@Id
 	@SequenceGenerator(name = "idGenerator", sequenceName = "postoid_gen", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")

@@ -8,16 +8,18 @@ import java.util.Set;
 import javax.transaction.Transactional;
 
 import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.fides.cinema.service.GestioneSala;
 import it.fides.cinema.dto.PostoDto;
 import it.fides.cinema.dto.SalaDto;
 import it.fides.cinema.dto.SearchSalaDto;
 import it.fides.cinema.entity.Posto;
 import it.fides.cinema.entity.Sala;
 import it.fides.cinema.repository.SalaRepository;
+import it.fides.cinema.service.GestioneSala;
 
 
 @Service
@@ -27,25 +29,39 @@ public class GestioneSalaImpl implements GestioneSala {
 	@Autowired
 	SalaRepository salaRepository;
 
-	DozerBeanMapper mapper;
+	private ModelMapper mapper;
 
 	@Override
 	public List<SalaDto> getAllSala() {
 		List<SalaDto> listaSaleDto = new ArrayList<>();
-		for (Sala sala : salaRepository.findAll()) {
-			SalaDto salaDto = new SalaDto();
-			salaDto.setNomeSala(sala.getNomeSala());
-			salaDto.setId(sala.getId());
-			salaDto.setNumeroPosti(sala.getNumeroPosti());
-			listaSaleDto.add(salaDto);
+		
+		
+//		for (Sala sala : salaRepository.findAll()) {
+//			SalaDto salaDto = new SalaDto();
+//			salaDto.setNomeSala(sala.getNomeSala());
+//			salaDto.setId(sala.getId());
+//			salaDto.setNumeroPosti(sala.getNumeroPosti());
+//			listaSaleDto.add(salaDto);
+//		}
+		
+		try {
+			for(Sala sala : salaRepository.findAll()) {
+				SalaDto salaDto = new SalaDto();
+				salaDto = mapper.map(sala, SalaDto.class);
+				listaSaleDto.add(salaDto);
+			}
+		}catch(NullPointerException e) {
+			System.out.println("Ma perché? Maledizione!");
+			e.printStackTrace();
 		}
+		
 		return listaSaleDto;
 	}
 
 	@Override
 	public void insertSala(SalaDto salaDto) {
 
-		mapper = new DozerBeanMapper();
+		Mapper mapper = new DozerBeanMapper();
 
 		Sala sala=mapper.map(salaDto, Sala.class);
 

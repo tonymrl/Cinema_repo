@@ -1,5 +1,6 @@
 package it.fides.cinema.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -17,7 +18,12 @@ import javax.persistence.SequenceGenerator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity                 //(name = "Sala") per cambiare nome da cercare
-public class Sala {
+public class Sala implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6114521800461904639L;
 
 	@Id
 	@SequenceGenerator(name = "idGeneratorSala", sequenceName = "salaid_gen", allocationSize = 1)

@@ -1,5 +1,6 @@
 package it.fides.cinema.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
@@ -15,8 +16,13 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Persona {
+public class Persona implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5794991156771744376L;
+
 	@Id
 	@SequenceGenerator(name = "userGen", sequenceName = "userid_gen", allocationSize = 1)
 	@GeneratedValue(generator = "userGen", strategy = GenerationType.SEQUENCE)
