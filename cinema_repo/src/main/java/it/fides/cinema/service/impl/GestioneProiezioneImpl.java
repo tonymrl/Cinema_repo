@@ -58,6 +58,8 @@ public class GestioneProiezioneImpl implements GestioneProiezione {
 		
 	}
 	
+	//sono bello
+	
 	@Override
 	public List<PostoDto> mostraPostiDisponibili(Long idProiezione) {
 		
