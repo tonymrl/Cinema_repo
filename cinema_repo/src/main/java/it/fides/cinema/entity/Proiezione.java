@@ -19,7 +19,7 @@ import javax.persistence.SequenceGenerator;
 public class Proiezione {
 	
 	@Id
-	@SequenceGenerator(name = "idGeneratorProiezione", sequenceName = "proiezioneid_gen", schema = "\"dario\"", allocationSize = 1)
+	@SequenceGenerator(name = "idGeneratorProiezione", sequenceName = "proiezioneid_gen", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGeneratorProiezione")
 	private Long id;
 

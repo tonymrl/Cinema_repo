@@ -1,145 +1,162 @@
-
-h1{
- background-color:  #ffffffbf;
-  text-align: center;
-  font-family: 'Gotu', sans-serif;
-  color: darkred;
-}
-.form-group{
-  background-color:#0000007a;
-}
-.bg-secondary {
-    background-color: #790000b8 !important;
-}
-
-.submitform {
-  margin: 5px;
-  position: relative;
-  background-color: #1013103d;
-  height: 53%;
-  margin-top: 220px;
-  text-align: center;
-  font-weight: 700;
-  width: 100%;
- 
+h1 {
+	background-color: #ffffffbf;
+	text-align: center;
+	font-family: 'Gotu', sans-serif;
+	color: darkred;
 }
 
 .form-group {
-    margin-bottom: 3rem;
-    padding-left: 13%;
-    text-align:left;
+	background-color: #0000007a;
+}
+
+.bg-secondary {
+	background-color: #790000b8 !important;
+}
+
+.submitform {
+	margin: 5px;
+	position: relative;
+	background-color: #1013103d;
+	height: 53%;
+	margin-top: 220px;
+	text-align: center;
+	font-weight: 700;
+	width: 100%;
+}
+
+.form-group {
+	margin-bottom: 3rem;
+	padding-left: 13%;
+	text-align: left;
 }
 
 .col-sm {
+	margin-top: 10% !important;
+	text-align: center;
+	margin-top: 10%;
+	position: absolute;
+	font-style: oblique;
+	color: crimson;
+	font-weight: bolder;
 }
+
 .col-sm-10 {
+	
 }
 
-#feedback{
-  color: coral;
-  font-weight: bolder;
+#feedback {
+	color: coral;
+	font-weight: bolder;
 }
 
-#feedbackLog{
-  color:blue;
-  font-weight: bolder;
+#feedbackLog {
+	color: blue;
+	font-weight: bolder;
 }
 
-
-#registrati-btn{
-  position: relative;
-  float: right;
+#registrati-btn {
+	position: relative;
+	float: right;
 }
 
 .registrazione {
-  margin: 5px;
-  position: relative;
-  background-color: #1013103d;
-  height: 75%;
-  margin-top: 100px;
-  text-align: center;
-  font-weight: 700;
-  width: 100%;
+	margin: 5px;
+	position: relative;
+	background-color: #1013103d;
+	height: 75%;
+	margin-top: 100px;
+	text-align: center;
+	font-weight: 700;
+	width: 100%;
 }
 
-.col-sm-5{
-  background-color:#00000061;
+.col-sm-5 {
+	background-color: #00000061;
 }
 
-body{
-	background-color: #F4EBEB;	
+body {
+	background-color: #F4EBEB;
 }
 
-table thead, tfoot{
+table thead, tfoot {
 	font-family: 'Comfortaa', cursive;
 }
 
 .dataTables_wrapper label {
-    color: black;
-    font-family: 'Gotu', sans-serif;
+	color: black;
+	font-family: 'Gotu', sans-serif;
 }
 
 .dataTables_wrapper .dataTables_filter {
-    float: none !important;
-    text-align: center !important;
-}
-.dataTables_wrapper .dataTables_length {
-    display: none;
+	float: none !important;
+	text-align: center !important;
 }
 
-.dataTables_info{
-	 display: none;
+.dataTables_wrapper .dataTables_length {
+	display: none;
 }
-.dataTables_paginate{
+
+.dataTables_info {
+	display: none;
+}
+
+.dataTables_paginate {
 	float: none !important;
 	text-align: center !important;
 }
 
 #bindex {
-    background-attachment: fixed;
-    background-repeat: repeat-x;
-    background-image: url(/img/cinema.jpg);
-    background-position-y: center;
-    background-position-x: 44%;
+	background-attachment: fixed;
+	background-repeat: repeat-x;
+	background-image: url(/img/cinema.jpg);
+	background-position-y: center;
+	background-position-x: 44%;
 }
 
+.col-sm {
+	margin-top: 10%;
+}
 
 .justify-content-end {
-  -ms-flex-pack:center!important;
-  justify-content: center;
-  margin-top: 10%;
+	-ms-flex-pack: center !important;
+	justify-content: center;
+	margin-top: 10%;
 }
 
 .signEl {
-  color: #007bff!important;
-  font-size: larger;
-  font-style: italic;
+	color: #007bff !important;
+	font-size: larger;
+	font-style: italic;
 }
-.signEl:hover{
-  font-weight: bolder;
-  color:darkred!important;
 
+.signEl:hover {
+	font-weight: bolder;
+	color: darkred !important;
 }
-img{
-  border-style: double;
-  border-radius: 3px;
+
+img {
+	border-style: double;
+	border-radius: 3px;
 }
+
 .carousel {
-  position: relative;
-  margin-top: 10%;
+	position: relative;
+	margin-top: 10%;
 }
+
 a {
-  color: #ffffff!important;
-  text-decoration: none;
-  background-color: transparent;
+	color: #ffffff !important;
+	text-decoration: none;
+	background-color: transparent;
 }
+
 .page-link {
-  position: relative;
-  display: block;
-  padding: .5rem .75rem;
-  margin-left: -1px;
-  line-height: 1.25;
-  color: #007bff!important;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
+	position: relative;
+	display: block;
+	padding: .5rem .75rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #007bff !important;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
 }
